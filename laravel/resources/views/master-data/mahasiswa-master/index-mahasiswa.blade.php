@@ -6,8 +6,8 @@
   </x-slot>
 
   <div class="container p-4 mx-auto">
-    <div class="flex justify-between items-center mb-4">
-        @if (session('success'))
+  <div class="flex space-x-2 mb-4">
+  @if (session('success'))
         <div class="mb-4 rounded-lg bg-green-50 p-4 text-green-500">
             {{ session('success') }}
         </div>
@@ -17,12 +17,22 @@
         </div>
         @endif
         
-      <a href="{{ route('mahasiswa-create') }}">
-        <button class="px-6 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-          Add Mahasiswa Data
+    <a href="{{ route('mahasiswa-create') }}">
+        <button
+            class="px-6 py-2 text-black bg-black-500 border border-blue-600 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Add Data Mahasiswa
         </button>
-      </a>
-    </div>
+    </a>
+
+    <a href="{{ route('mahasiswa-export-excel') }}">
+        <button
+            class="px-6 py-2 text-black bg-red-600 border border-green-600 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+            Export Data
+        </button>
+    </a>
+</div>
+
+
     <div class="flex justify-center">
       <table class="w-full max-w-4xl border border-collapse border-gray-200">
         <thead>

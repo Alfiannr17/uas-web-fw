@@ -12,6 +12,7 @@ Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name("
 Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name("mahasiswa-deleted");
 
+Route::get('/mahasiswa/export/excel', [MahasiswaController::class, 'exportExcel'])->name('mahasiswa-export-excel');
 
 Route::get('/', function () {
     return view('welcome');

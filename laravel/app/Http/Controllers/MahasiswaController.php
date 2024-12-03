@@ -75,4 +75,8 @@ class MahasiswaController extends Controller
         }
             return redirect()->back()->with('error', 'Data tidak ditemukan.');
     }
+
+    public function exportExcel() {
+        return Excel::download(new MahasiswaExport, 'mahasiswa.xlsx');
+    }
 }
