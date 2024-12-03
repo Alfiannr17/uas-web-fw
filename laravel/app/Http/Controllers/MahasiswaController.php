@@ -12,7 +12,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $data = Mahasiswa::all();
+        return view("master-data.mahasiswa-master.index-mahasiswa", compact('data'));
     }
 
     /**
@@ -67,6 +68,11 @@ class MahasiswaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $mahasiswa = Mahasiswa::find($id);
+        if ($mahasiswa) {
+            $mahasiswa->delete();
+            return redirect()->back()->with('Success', 'Data berhasil dihapus.');
+        }
+            return redirect()->back()->with('error', 'Data tidak ditemukan.');
     }
 }

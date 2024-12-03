@@ -37,7 +37,7 @@
 
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('mahasiswa-create')">
+                        <x-dropdown-link :href="route('mahasiswa-index')">
                            Data Mahasiswa
                         </x-dropdown-link>
 
